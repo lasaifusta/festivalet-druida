@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ca" data-lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Festivalet Druida — Lammas 2026 · trobada al bosc prop de Banyoles</title>
+<meta name="description" content="Festivalet Druida: trobada al bosc per celebrar la vida, la terra i la saviesa ancestral. Edició Lammas, 24·25·26 de juliol de 2026, prop de Banyoles. Espai familiar i en comunitat.">
+<style>
+  :root{
+    --paper:#f6f1e4; --paper-2:#efe7d3;
+    --ink:#23200f; --soft:#5f5840;
+    --green:#3c5a3a; --green-deep:#243a23; --moss:#7d9963;
+    --gold:#bf9540; --gold-2:#d9b85f;
+    --bark:#6e4f33; --line:#ddd2b4; --line-strong:#243a23;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --wrap:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--serif);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.2em;
+    text-transform:uppercase;font-weight:600;color:var(--gold)}
+  /* bilingüe */
+  html[data-lang="ca"] .es{display:none}
+  html[data-lang="es"] .ca{display:none}
+
+  /* ── Nav ── */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(36,58,35,.96);
+    backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid rgba(217,184,95,.3)}
+  .nav-in{max-width:var(--wrap);margin:0 auto;padding:12px 28px;
+    display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--paper);
+    margin-right:auto;font-size:19px;font-weight:600;letter-spacing:.01em}
+  .brand .emblem{width:30px;height:30px;color:var(--gold-2);flex:0 0 auto}
+  .brand b{font-weight:600} .brand i{font-style:italic;color:var(--gold-2);font-weight:600}
+  .nav-links{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--sans);
+    font-size:13.5px;letter-spacing:.02em}
+  .nav-links a{text-decoration:none;color:#e7e0c8;padding-bottom:2px;
+    border-bottom:1.5px solid transparent;transition:color .15s,border-color .15s}
+  .nav-links a:hover,.nav-links a[aria-current]{color:#fff;border-color:var(--gold-2)}
+  .lang{display:flex;gap:0;border:1px solid rgba(217,184,95,.5);border-radius:3px;overflow:hidden}
+  .lang button{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.05em;
+    background:transparent;color:#e7e0c8;border:none;padding:6px 11px;cursor:pointer;transition:.15s}
+  .lang button[aria-pressed="true"]{background:var(--gold-2);color:var(--green-deep)}
+
+  /* ── Hero ── */
+  .hero{position:relative;overflow:hidden;color:var(--paper);
+    background:
+      radial-gradient(120% 80% at 80% 0%, rgba(191,149,64,.28), transparent 55%),
+      linear-gradient(160deg,#2f4a2d 0%, #243a23 55%, #1c2e1b 100%)}
+  .hero .emblem-bg{position:absolute;right:-60px;bottom:-80px;width:420px;height:420px;
+    color:rgba(217,184,95,.13);pointer-events:none}
+  .hero-in{position:relative;max-width:var(--wrap);margin:0 auto;padding:84px 28px 78px}
+  .hero h1{font-size:clamp(48px,9vw,104px);line-height:.98;margin:.18em 0 .26em;
+    font-weight:600;letter-spacing:-.02em}
+  .hero h1 i{font-style:italic;color:var(--gold-2)}
+  .hero .lede{font-size:21px;color:#e9e3cd;max-width:40ch;margin:0 0 30px;line-height:1.5}
+  .date-badge{display:inline-flex;align-items:center;gap:14px;font-family:var(--sans);
+    font-size:14px;letter-spacing:.04em;color:#f1ead2;border:1px solid rgba(217,184,95,.45);
+    border-radius:4px;padding:10px 18px;margin-bottom:30px}
+  .date-badge b{font-family:var(--serif);font-size:18px;color:var(--gold-2);letter-spacing:.06em}
+  .date-badge .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-2)}
+  .btn-row{display:flex;gap:13px;flex-wrap:wrap}
+  .btn{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:600;
+    letter-spacing:.02em;text-decoration:none;padding:14px 26px;border-radius:3px;
+    background:var(--gold-2);color:var(--green-deep);border:1.5px solid var(--gold-2);transition:.15s}
+  .btn:hover{background:transparent;color:var(--gold-2)}
+  .btn.ghost{background:transparent;color:var(--paper);border-color:rgba(246,241,228,.6)}
+  .btn.ghost:hover{background:var(--paper);color:var(--green-deep);border-color:var(--paper)}
+
+  /* ── Sections ── */
+  section{padding:78px 0}
+  .section-tag{margin-bottom:14px}
+  h2{font-size:clamp(30px,4.6vw,48px);line-height:1.08;font-weight:600;
+    letter-spacing:-.015em;margin:0 0 .55em}
+  h2 i{font-style:italic;color:var(--green)}
+  .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .lead-grid p{margin:0 0 1em;color:#3b3724}
+  .lead-grid p.big{font-size:22px;line-height:1.5;color:var(--ink)}
+  .emblem-frame{display:flex;justify-content:center}
+  .emblem-frame .emblem{width:240px;height:240px;color:var(--green)}
+
+  /* ── Roda celta ── */
+  .roda{background:var(--green-deep);color:var(--paper)}
+  .roda .wrap{padding-top:74px;padding-bottom:74px}
+  .roda h2{color:var(--paper)} .roda .eyebrow{color:var(--gold-2)}
+  .roda .intro{max-width:52ch;color:#dcd6bf;margin:0 0 38px}
+  .wheel{display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border:1px solid rgba(217,184,95,.35);border-radius:5px;overflow:hidden}
+  .spoke{padding:26px 22px;border-right:1px solid rgba(217,184,95,.22);position:relative}
+  .spoke:last-child{border-right:none}
+  .spoke .season{font-family:var(--sans);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--moss);font-weight:600}
+  .spoke h3{font-size:25px;margin:10px 0 8px;font-weight:600}
+  .spoke p{font-size:14px;color:#cfc9b2;margin:0;line-height:1.5}
+  .spoke.now{background:linear-gradient(160deg,rgba(191,149,64,.22),rgba(191,149,64,.05))}
+  .spoke.now h3{color:var(--gold-2)}
+  .spoke.now .season{color:var(--gold-2)}
+  .spoke .tag-now{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--green-deep);background:var(--gold-2);
+    border-radius:3px;padding:2px 7px;margin-top:12px}
+
+  /* ── Familia / split ── */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
+  .split .panel{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;
+    padding:34px 32px}
+  .split .panel h3{margin:0 0 12px;font-size:24px}
+  .split .panel p{margin:0;color:#3b3724;font-size:16px}
+  .split ul.clean{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:12px}
+  .split ul.clean li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:#3b3724}
+  .split ul.clean svg{flex:0 0 auto;margin-top:5px;color:var(--gold)}
+
+  /* ── CTA band ── */
+  .cta{background:
+      radial-gradient(120% 120% at 0% 0%, rgba(191,149,64,.25), transparent 55%),
+      linear-gradient(160deg,#3c5a3a,#243a23);color:var(--paper);text-align:center}
+  .cta .wrap{padding-top:72px;padding-bottom:72px}
+  .cta .eyebrow{color:var(--gold-2)}
+  .cta h2{color:var(--paper);max-width:20ch;margin-left:auto;margin-right:auto}
+  .cta p{color:#e3ddc6;max-width:48ch;margin:0 auto 28px}
+
+  /* ── Footer ── */
+  footer{background:var(--ink);color:#d7d0b8;padding:44px 0;font-family:var(--sans);font-size:14px}
+  .foot-in{max-width:var(--wrap);margin:0 auto;padding:0 28px;
+    display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
+  .foot-in .brand-f{font-family:var(--serif);font-size:20px;color:var(--paper);display:flex;gap:10px;align-items:center}
+  .foot-in .brand-f .emblem{width:26px;height:26px;color:var(--gold-2)}
+  .foot-in a{color:var(--gold-2);text-decoration:none}
+  .foot-in a:hover{text-decoration:underline}
+  .foot-col{display:grid;gap:7px}
+  .foot-note{color:#8d876f;font-size:12.5px}
+
+  @media(max-width:860px){
+    .lead-grid,.split{grid-template-columns:1fr;gap:30px}
+    .emblem-frame{order:-1} .emblem-frame .emblem{width:170px;height:170px}
+    .wheel{grid-template-columns:1fr 1fr}
+    .spoke:nth-child(2){border-right:none}
+    .spoke{border-bottom:1px solid rgba(217,184,95,.22)}
+    section{padding:56px 0}
+    .nav-in{gap:14px} .nav-links{font-size:13px;gap:14px;order:3;width:100%}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <svg class="emblem" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="2"/><path d="M50 74V44"/><path d="M50 50C44 46 40 40 36 34"/><path d="M50 50c6-4 10-10 14-16"/><path d="M50 44c-4-4-6-10-6-16"/><path d="M50 44c4-4 6-10 6-16"/><path d="M36 34c-3-3-5-6-6-10"/><path d="M64 34c3-3 5-6 6-10"/><path d="M50 74c-5 4-9 6-14 8"/><path d="M50 74c5 4 9 6 14 8"/><path d="M50 74c-1 5-2 8-3 12"/><path d="M50 74c1 5 2 8 3 12"/></svg>
+      <span><b>Festivalet</b> <i>Druida</i></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page"><span class="ca">Inici</span><span class="es">Inicio</span></a>
+      <a href="el-festival.html"><span class="ca">El festival</span><span class="es">El festival</span></a>
+      <a href="lammas.html">Lammas 2026</a>
+      <a href="info.html"><span class="ca">Info pràctica</span><span class="es">Info práctica</span></a>
+    </div>
+    <div class="lang" role="group" aria-label="Idioma">
+      <button data-lang-btn="ca" type="button">CA</button>
+      <button data-lang-btn="es" type="button">ES</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="emblem-bg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.2"/><path d="M50 74V44"/><path d="M50 50C44 46 40 40 36 34"/><path d="M50 50c6-4 10-10 14-16"/><path d="M50 44c-4-4-6-10-6-16"/><path d="M50 44c4-4 6-10 6-16"/><path d="M36 34c-3-3-5-6-6-10"/><path d="M64 34c3-3 5-6 6-10"/><path d="M50 74c-5 4-9 6-14 8"/><path d="M50 74c5 4 9 6 14 8"/><path d="M50 74c-1 5-2 8-3 12"/><path d="M50 74c1 5 2 8 3 12"/></svg>
+  <div class="hero-in">
+    <p class="eyebrow"><span class="ca">Roda celta · edició Lammas</span><span class="es">Rueda celta · edición Lammas</span></p>
+    <h1>Festivalet <i>Druida</i></h1>
+    <p class="lede">
+      <span class="ca">Una trobada al bosc per celebrar la vida, la terra i la saviesa ancestral que habita en nosaltres.</span>
+      <span class="es">Un encuentro en el bosque para celebrar la vida, la tierra y la sabiduría ancestral que nos habita.</span>
+    </p>
+    <div class="date-badge">
+      <b>24·25·26</b>
+      <span class="ca">juliol 2026</span><span class="es">julio 2026</span>
+      <span class="dot"></span>
+      <span class="ca">bosc prop de Banyoles</span><span class="es">bosque cerca de Banyoles</span>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeZ9oaAwf7qFiE3iU6C7se9xpNlTYEK94ZSFQa9YK8rmncEig/viewform" target="_blank" rel="noopener">
+        <span class="ca">Reservar la meva plaça</span><span class="es">Reservar mi plaza</span></a>
+      <a class="btn ghost" href="el-festival.html"><span class="ca">Conèixer el festival</span><span class="es">Conocer el festival</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="que-es">
+  <div class="wrap">
+    <div class="lead-grid">
+      <div>
+        <p class="eyebrow section-tag"><span class="ca">Què és</span><span class="es">Qué es</span></p>
+        <p class="big">
+          <span class="ca">Ens reunim en comunitat per viure els cicles naturals, sostenir-nos en allò humà i obrir espais d'escolta, joc i ritual.</span>
+          <span class="es">Nos reunimos en comunidad para vivir los ciclos naturales, sostenernos en lo humano y abrir espacios de escucha, juego y ritual.</span>
+        </p>
+        <p>
+          <span class="ca">Festivalet Druida no és només un esdeveniment: és una manera de recordar que no estem sols, que la tribu existeix i que la terra encara ens parla. Música viva, dansa, cant, foc i cura, per a totes les edats.</span>
+          <span class="es">Festivalet Druida no es solo un evento: es una forma de recordar que no estamos solos, que la tribu existe y que la tierra sigue hablándonos. Música viva, danza, canto, fuego y cuidado, para todas las edades.</span>
+        </p>
+        <div class="btn-row" style="margin-top:8px">
+          <a class="btn" style="background:var(--green);border-color:var(--green);color:var(--paper)" href="el-festival.html"><span class="ca">Llegir més</span><span class="es">Leer más</span></a>
+        </div>
+      </div>
+      <div class="emblem-frame">
+        <svg class="emblem" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.6"/><path d="M50 74V44"/><path d="M50 50C44 46 40 40 36 34"/><path d="M50 50c6-4 10-10 14-16"/><path d="M50 44c-4-4-6-10-6-16"/><path d="M50 44c4-4 6-10 6-16"/><path d="M36 34c-3-3-5-6-6-10"/><path d="M64 34c3-3 5-6 6-10"/><path d="M50 74c-5 4-9 6-14 8"/><path d="M50 74c5 4 9 6 14 8"/><path d="M50 74c-1 5-2 8-3 12"/><path d="M50 74c1 5 2 8 3 12"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roda" id="roda">
+  <div class="wrap">
+    <p class="eyebrow section-tag"><span class="ca">El cicle de l'any</span><span class="es">El ciclo del año</span></p>
+    <h2><span class="ca">Caminem la roda celta</span><span class="es">Caminamos la rueda celta</span></h2>
+    <p class="intro">
+      <span class="ca">Quatre trobades al llarg de l'any, com un mapa viu de transformació. Aquest estiu ens retrobem a Lammas.</span>
+      <span class="es">Cuatro encuentros a lo largo del año, como un mapa vivo de transformación. Este verano nos reencontramos en Lammas.</span>
+    </p>
+    <div class="wheel">
+      <div class="spoke">
+        <div class="season"><span class="ca">Primavera</span><span class="es">Primavera</span></div>
+        <h3>Ostara</h3>
+        <p><span class="ca">El despertar i la llum que torna.</span><span class="es">El despertar y la luz que vuelve.</span></p>
+      </div>
+      <div class="spoke">
+        <div class="season"><span class="ca">Maig</span><span class="es">Mayo</span></div>
+        <h3>Beltane</h3>
+        <p><span class="ca">El foc, la fertilitat i la plenitud.</span><span class="es">El fuego, la fertilidad y la plenitud.</span></p>
+      </div>
+      <div class="spoke now">
+        <div class="season"><span class="ca">24·25·26 juliol</span><span class="es">24·25·26 julio</span></div>
+        <h3>Lammas</h3>
+        <p><span class="ca">La primera collita i la gratitud.</span><span class="es">La primera cosecha y la gratitud.</span></p>
+        <span class="tag-now"><span class="ca">Pròxima edició</span><span class="es">Próxima edición</span></span>
+      </div>
+      <div class="spoke">
+        <div class="season"><span class="ca">Tardor</span><span class="es">Otoño</span></div>
+        <h3>Samhain</h3>
+        <p><span class="ca">El record, el misteri i el descans.</span><span class="es">El recuerdo, el misterio y el descanso.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="familia">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow section-tag"><span class="ca">Per tota la família</span><span class="es">Para toda la familia</span></p>
+        <h2><span class="ca">Un espai <i>familiar</i> i comunitari</span><span class="es">Un espacio <i>familiar</i> y comunitario</span></h2>
+        <p>
+          <span class="ca">Els infants també tenen el seu propi camí, acompanyats per un equip de druides del bosc. Un cap de setmana per descansar, reconnectar i jugar, amb els peus a la terra i en unió amb els altres.</span>
+          <span class="es">Los niños también tienen su propio camino, acompañados por un equipo de druidas del bosque. Un fin de semana para descansar, reconectar y jugar, con los pies en la tierra y en unión con los demás.</span>
+        </p>
+        <ul class="clean">
+          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><span class="ca">Equip infantil propi (druides del bosc).</span><span class="es">Equipo infantil propio (druidas del bosque).</span></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><span class="ca">Música viva, dansa, cant i ritual al voltant del foc.</span><span class="es">Música viva, danza, canto y ritual alrededor del fuego.</span></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><span class="ca">Mercat, teràpies i cuina cuidada.</span><span class="es">Mercado, terapias y cocina cuidada.</span></span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="ca">La tribu</span><span class="es">La tribu</span></h3>
+        <p>
+          <span class="ca">"Però com no vaig a creure en la màgia, si puc veure el foc cremar davant meu." Et reps amb el cor obert; la resta passa sol.</span>
+          <span class="es">"Pero cómo no voy a creer en la magia, si puedo ver el fuego arder frente a mí." Llegas con el corazón abierto; lo demás sucede solo.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="reservar">
+  <div class="wrap">
+    <p class="eyebrow"><span class="ca">Lammas · 24·25·26 juliol 2026</span><span class="es">Lammas · 24·25·26 julio 2026</span></p>
+    <h2><span class="ca">Sents la crida del bosc?</span><span class="es">¿Sientes la llamada del bosque?</span></h2>
+    <p>
+      <span class="ca">Les places són limitades per cuidar l'espai i la trobada. Reserva la teva i rebràs tota la informació, també la ubicació exacta.</span>
+      <span class="es">Las plazas son limitadas para cuidar el espacio y el encuentro. Reserva la tuya y recibirás toda la información, también la ubicación exacta.</span>
+    </p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeZ9oaAwf7qFiE3iU6C7se9xpNlTYEK94ZSFQa9YK8rmncEig/viewform" target="_blank" rel="noopener">
+        <span class="ca">Reservar la meva plaça</span><span class="es">Reservar mi plaza</span></a>
+      <a class="btn ghost" href="lammas.html"><span class="ca">Veure el programa</span><span class="es">Ver el programa</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-col">
+      <span class="brand-f">
+        <svg class="emblem" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="2"/><path d="M50 74V44"/><path d="M50 50C44 46 40 40 36 34"/><path d="M50 50c6-4 10-10 14-16"/><path d="M50 44c-4-4-6-10-6-16"/><path d="M50 44c4-4 6-10 6-16"/><path d="M36 34c-3-3-5-6-6-10"/><path d="M64 34c3-3 5-6 6-10"/><path d="M50 74c-5 4-9 6-14 8"/><path d="M50 74c5 4 9 6 14 8"/><path d="M50 74c-1 5-2 8-3 12"/><path d="M50 74c1 5 2 8 3 12"/></svg>
+        Festivalet Druida</span>
+      <span class="foot-note"><span class="ca">Trobada al bosc · roda celta · espai familiar</span><span class="es">Encuentro en el bosque · rueda celta · espacio familiar</span></span>
+    </div>
+    <div class="foot-col">
+      <span><span class="ca">Pàgines</span><span class="es">Páginas</span></span>
+      <a href="el-festival.html"><span class="ca">El festival</span><span class="es">El festival</span></a>
+      <a href="lammas.html">Lammas 2026</a>
+      <a href="info.html"><span class="ca">Info pràctica</span><span class="es">Info práctica</span></a>
+    </div>
+    <div class="foot-col">
+      <span><span class="ca">Seguir-nos</span><span class="es">Seguirnos</span></span>
+      <a href="https://www.instagram.com/festivalet_druida/" target="_blank" rel="noopener">@festivalet_druida</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZ9oaAwf7qFiE3iU6C7se9xpNlTYEK94ZSFQa9YK8rmncEig/viewform" target="_blank" rel="noopener"><span class="ca">Reservar plaça</span><span class="es">Reservar plaza</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function set(l){root.setAttribute('data-lang',l);root.setAttribute('lang',l);
+    try{localStorage.setItem('fd_lang',l)}catch(e){}
+    var bs=document.querySelectorAll('[data-lang-btn]');
+    for(var i=0;i<bs.length;i++){bs[i].setAttribute('aria-pressed', bs[i].getAttribute('data-lang-btn')===l ? 'true':'false');}}
+  var saved='ca';try{saved=localStorage.getItem('fd_lang')||'ca'}catch(e){}
+  set(saved);
+  var bs=document.querySelectorAll('[data-lang-btn]');
+  for(var i=0;i<bs.length;i++){(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-lang-btn'))});})(bs[i]);}
+})();
+</script>
+</body>
+</html>
