@@ -51,8 +51,9 @@
   /* ── Hero ── */
   .hero{position:relative;overflow:hidden;color:var(--paper);
     background:
-      radial-gradient(120% 80% at 80% 0%, rgba(191,149,64,.28), transparent 55%),
-      linear-gradient(160deg,#2f4a2d 0%, #243a23 55%, #1c2e1b 100%)}
+      radial-gradient(120% 80% at 80% 0%, rgba(191,149,64,.30), transparent 55%),
+      linear-gradient(160deg, rgba(33,52,32,.88) 0%, rgba(28,46,27,.80) 52%, rgba(20,32,19,.92) 100%),
+      url("imagenes/hero.jpg") center 32%/cover no-repeat}
   .hero .emblem-bg{position:absolute;right:-60px;bottom:-80px;width:420px;height:420px;
     color:rgba(217,184,95,.13);pointer-events:none}
   .hero-in{position:relative;max-width:var(--wrap);margin:0 auto;padding:84px 28px 78px}
@@ -85,6 +86,15 @@
   .lead-grid p.big{font-size:22px;line-height:1.5;color:var(--ink)}
   .emblem-frame{display:flex;justify-content:center}
   .emblem-frame .emblem{width:240px;height:240px;color:var(--green)}
+  /* fotos */
+  .photo{margin:0;border-radius:6px;overflow:hidden;box-shadow:0 18px 40px rgba(36,58,35,.22)}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .lead-photo{aspect-ratio:4/5;max-height:540px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .gallery figure{margin:0;border-radius:6px;overflow:hidden;box-shadow:0 10px 26px rgba(36,58,35,.16);aspect-ratio:3/4}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+  .gallery figure:hover img{transform:scale(1.05)}
+  .gallcap{font-family:var(--sans);font-size:12.5px;color:var(--soft);margin:16px 0 0}
 
   /* ── Roda celta ── */
   .roda{background:var(--green-deep);color:var(--paper)}
@@ -139,6 +149,8 @@
   @media(max-width:860px){
     .lead-grid,.split{grid-template-columns:1fr;gap:30px}
     .emblem-frame{order:-1} .emblem-frame .emblem{width:170px;height:170px}
+    .lead-photo{order:-1;max-height:380px}
+    .gallery{grid-template-columns:1fr 1fr}
     .wheel{grid-template-columns:1fr 1fr}
     .spoke:nth-child(2){border-right:none}
     .spoke{border-bottom:1px solid rgba(217,184,95,.22)}
@@ -210,9 +222,9 @@
           <a class="btn" style="background:var(--green);border-color:var(--green);color:var(--paper)" href="el-festival.html"><span class="ca">Llegir més</span><span class="es">Leer más</span></a>
         </div>
       </div>
-      <div class="emblem-frame">
-        <svg class="emblem" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.6"/><path d="M50 74V44"/><path d="M50 50C44 46 40 40 36 34"/><path d="M50 50c6-4 10-10 14-16"/><path d="M50 44c-4-4-6-10-6-16"/><path d="M50 44c4-4 6-10 6-16"/><path d="M36 34c-3-3-5-6-6-10"/><path d="M64 34c3-3 5-6 6-10"/><path d="M50 74c-5 4-9 6-14 8"/><path d="M50 74c5 4 9 6 14 8"/><path d="M50 74c-1 5-2 8-3 12"/><path d="M50 74c1 5 2 8 3 12"/></svg>
-      </div>
+      <figure class="photo lead-photo">
+        <img src="imagenes/comunitat.jpg" alt="Mans de la comunitat sostenint l'arbre de maig al bosc" loading="lazy">
+      </figure>
     </div>
   </div>
 </section>
@@ -278,6 +290,20 @@
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="galeria" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow section-tag"><span class="ca">L'última trobada</span><span class="es">El último encuentro</span></p>
+    <h2><span class="ca">Així es viu el <i>festivalet</i></span><span class="es">Así se vive el <i>festivalet</i></span></h2>
+    <div class="gallery">
+      <figure><img src="imagenes/cintes.jpg" alt="L'arbre de maig amb cintes de colors" loading="lazy"></figure>
+      <figure><img src="imagenes/arbre-1.jpg" alt="La comunitat aixecant l'arbre de maig al bosc" loading="lazy"></figure>
+      <figure><img src="imagenes/mans.jpg" alt="Moltes mans sostenint el tronc juntes" loading="lazy"></figure>
+      <figure><img src="imagenes/arbre-3.jpg" alt="Dansa de cintes al voltant de l'arbre" loading="lazy"></figure>
+    </div>
+    <p class="gallcap"><span class="ca">Imatges de la celebració de Beltane 2026.</span><span class="es">Imágenes de la celebración de Beltane 2026.</span></p>
   </div>
 </section>
 
