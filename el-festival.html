@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,0..100,0..1;1,9..144,400..600,0..100,0..1&display=swap" rel="stylesheet">
 <title>El festival — Festivalet Druida · trobada al bosc, roda celta i espai familiar</title>
 <meta name="description" content="Què és el Festivalet Druida: una trobada al bosc per celebrar la vida, la terra i la saviesa ancestral. La roda celta, l'espai familiar i l'equip de druides del bosc.">
 <style>
@@ -12,7 +15,8 @@
     --green:#3c5a3a; --green-deep:#243a23; --moss:#7d9963;
     --gold:#bf9540; --gold-2:#d9b85f;
     --bark:#6e4f33; --line:#ddd2b4; --line-strong:#243a23;
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+    --display:"Fraunces","Iowan Old Style",Palatino,Georgia,serif;
+    --serif:"EB Garamond","Iowan Old Style",Palatino,Georgia,"Times New Roman",serif;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --wrap:1080px;
   }
@@ -26,6 +30,8 @@
     text-transform:uppercase;font-weight:600;color:var(--gold)}
   html[data-lang="ca"] .es{display:none}
   html[data-lang="es"] .ca{display:none}
+  body{font-size:19px}
+  h1,h2,h3,.brand,.brand-f,.wname{font-family:var(--display);font-optical-sizing:auto;font-variation-settings:"SOFT" 60,"WONK" 1}
 
   .nav{position:sticky;top:0;z-index:50;background:rgba(36,58,35,.96);
     backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid rgba(217,184,95,.3)}
@@ -77,7 +83,7 @@
   .wline{stroke:#d9b85f;fill:none}
   .wnode{fill:#d9b85f}
   .wcenter{fill:#1c2e1b;stroke:#d9b85f}
-  .wname{font-family:var(--serif);font-weight:600;font-size:46px;fill:#f6f1e4}
+  .wname{font-family:var(--display);font-weight:600;font-size:46px;fill:#f6f1e4}
   .wname.now{fill:#d9b85f}
   .wsub{font-family:var(--sans);font-size:23px;letter-spacing:.04em;fill:#cdd6bb}
   .wbadge-bg{fill:#d9b85f}
@@ -203,25 +209,38 @@
       <g transform="translate(410,340) scale(1.8)" fill="none" stroke="#d9b85f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".9">
         <path d="M50 74V44"/><path d="M50 50C44 46 40 40 36 34"/><path d="M50 50c6-4 10-10 14-16"/><path d="M50 44c-4-4-6-10-6-16"/><path d="M50 44c4-4 6-10 6-16"/><path d="M36 34c-3-3-5-6-6-10"/><path d="M64 34c3-3 5-6 6-10"/><path d="M50 74c-5 4-9 6-14 8"/><path d="M50 74c5 4 9 6 14 8"/><path d="M50 74c-1 5-2 8-3 12"/><path d="M50 74c1 5 2 8 3 12"/>
       </g>
-      <circle cx="500" cy="200" r="7" class="wnode"/>
-      <circle cx="730" cy="430" r="7" class="wnode"/>
-      <circle cx="500" cy="660" r="7" class="wnode"/>
-      <circle cx="270" cy="430" r="13" fill="none" stroke="#d9b85f" stroke-width="2.5"/>
-      <circle cx="270" cy="430" r="6" class="wnode"/>
-      <text class="wname" x="500" y="118" text-anchor="middle">Samhain</text>
-      <text class="wsub ca" x="500" y="150" text-anchor="middle">Tardor</text>
-      <text class="wsub es" x="500" y="150" text-anchor="middle">Otoño</text>
-      <text class="wname" x="858" y="421" text-anchor="middle">Ostara</text>
-      <text class="wsub" x="858" y="453" text-anchor="middle">Primavera</text>
-      <text class="wname" x="500" y="744" text-anchor="middle">Beltane</text>
-      <text class="wsub ca" x="500" y="776" text-anchor="middle">Maig</text>
-      <text class="wsub es" x="500" y="776" text-anchor="middle">Mayo</text>
-      <text class="wname now" x="142" y="408" text-anchor="middle">Lammas</text>
-      <text class="wsub ca" x="142" y="438" text-anchor="middle">24·25·26 juliol</text>
-      <text class="wsub es" x="142" y="438" text-anchor="middle">24·25·26 julio</text>
-      <rect x="62" y="456" width="160" height="27" rx="5" class="wbadge-bg"/>
-      <text class="wbadge-tx ca" x="142" y="474" text-anchor="middle">PRÒXIMA EDICIÓ</text>
-      <text class="wbadge-tx es" x="142" y="474" text-anchor="middle">PRÓXIMA EDICIÓN</text>
+      <defs>
+        <clipPath id="d-sam"><circle cx="500" cy="200" r="46"/></clipPath>
+        <clipPath id="d-ost"><circle cx="730" cy="430" r="46"/></clipPath>
+        <clipPath id="d-bel"><circle cx="500" cy="660" r="46"/></clipPath>
+        <clipPath id="d-lam"><circle cx="270" cy="430" r="52"/></clipPath>
+      </defs>
+      <circle cx="500" cy="200" r="48" fill="#1c2e1b"/>
+      <image href="imagenes/edicio-samhain.jpg" x="454" y="154" width="92" height="92" clip-path="url(#d-sam)" preserveAspectRatio="xMidYMid slice"/>
+      <circle cx="500" cy="200" r="46" fill="none" stroke="#d9b85f" stroke-width="2" stroke-opacity=".8"/>
+      <circle cx="730" cy="430" r="48" fill="#1c2e1b"/>
+      <image href="imagenes/edicio-ostara.jpg" x="684" y="384" width="92" height="92" clip-path="url(#d-ost)" preserveAspectRatio="xMidYMid slice"/>
+      <circle cx="730" cy="430" r="46" fill="none" stroke="#d9b85f" stroke-width="2" stroke-opacity=".8"/>
+      <circle cx="500" cy="660" r="48" fill="#1c2e1b"/>
+      <image href="imagenes/edicio-beltane.jpg" x="454" y="614" width="92" height="92" clip-path="url(#d-bel)" preserveAspectRatio="xMidYMid slice"/>
+      <circle cx="500" cy="660" r="46" fill="none" stroke="#d9b85f" stroke-width="2" stroke-opacity=".8"/>
+      <circle cx="270" cy="430" r="54" fill="#1c2e1b"/>
+      <image href="imagenes/edicio-lammas.jpg" x="218" y="378" width="104" height="104" clip-path="url(#d-lam)" preserveAspectRatio="xMidYMid slice"/>
+      <circle cx="270" cy="430" r="52" fill="none" stroke="#d9b85f" stroke-width="3"/>
+      <text class="wname" x="500" y="106" text-anchor="middle">Samhain</text>
+      <text class="wsub ca" x="500" y="136" text-anchor="middle">Tardor</text>
+      <text class="wsub es" x="500" y="136" text-anchor="middle">Otoño</text>
+      <text class="wname" x="882" y="421" text-anchor="middle">Ostara</text>
+      <text class="wsub" x="882" y="453" text-anchor="middle">Primavera</text>
+      <text class="wname" x="500" y="752" text-anchor="middle">Beltane</text>
+      <text class="wsub ca" x="500" y="784" text-anchor="middle">Maig</text>
+      <text class="wsub es" x="500" y="784" text-anchor="middle">Mayo</text>
+      <text class="wname now" x="120" y="404" text-anchor="middle">Lammas</text>
+      <text class="wsub ca" x="120" y="434" text-anchor="middle">24·25·26 juliol</text>
+      <text class="wsub es" x="120" y="434" text-anchor="middle">24·25·26 julio</text>
+      <rect x="42" y="452" width="156" height="27" rx="5" class="wbadge-bg"/>
+      <text class="wbadge-tx ca" x="120" y="470" text-anchor="middle">PRÒXIMA EDICIÓ</text>
+      <text class="wbadge-tx es" x="120" y="470" text-anchor="middle">PRÓXIMA EDICIÓN</text>
     </svg>
   </div>
 </section>
