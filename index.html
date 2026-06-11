@@ -6,8 +6,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,0..100,0..1;1,9..144,400..600,0..100,0..1&display=swap" rel="stylesheet">
-<title>Festivalet Druida — Lammas 2026 · trobada al bosc prop de Banyoles</title>
-<meta name="description" content="Festivalet Druida: trobada al bosc per celebrar la vida, la terra i la saviesa ancestral. Edició Lammas, 24·25·26 de juliol de 2026, prop de Banyoles. Espai familiar i en comunitat.">
+<title>Festivalet Druida — Lammas 2026 · trobada al bosc a Castellar del Riu</title>
+<meta name="description" content="Festivalet Druida: trobada al bosc per celebrar la vida, la terra i la saviesa ancestral. Edició Lammas, 24·25·26 de juliol de 2026, a Castellar del Riu (Berguedà). Espai familiar i en comunitat.">
+<link rel="icon" type="image/png" href="imagenes/favicon-arbre.png">
 <style>
   :root{
     --paper:#f6f1e4; --paper-2:#efe7d3;
@@ -151,6 +152,52 @@
   .split ul.clean li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:#3b3724}
   .split ul.clean svg{flex:0 0 auto;margin-top:5px;color:var(--gold)}
 
+  /* ── Home v4: blocs del relat ── */
+  .two-col{display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:center}
+  .verse{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:9px}
+  .verse li{font-size:20px;font-style:italic;color:#3b3724;line-height:1.45}
+  .verse li b{font-style:normal;font-weight:500;color:var(--green-deep)}
+  .photo-tall{aspect-ratio:4/5;max-height:520px}
+  .strip4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+  .strip4 figure{margin:0;border-radius:6px;overflow:hidden;box-shadow:0 10px 26px rgba(36,58,35,.16);aspect-ratio:4/3}
+  .strip4 img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+  .strip4 figure:hover img{transform:scale(1.05)}
+
+  .statement{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+  .statement h2{max-width:18ch;margin-left:auto;margin-right:auto}
+  .statement p{max-width:60ch;margin:0 auto;font-size:20px;color:#3b3724}
+
+  .mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:175px;gap:14px;margin-top:40px}
+  .mosaic figure{margin:0;border-radius:6px;overflow:hidden;box-shadow:0 10px 26px rgba(36,58,35,.16)}
+  .mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+  .mosaic figure:hover img{transform:scale(1.04)}
+  .mosaic .mbig{grid-column:span 2;grid-row:span 2}
+  .center-head{text-align:center}
+  .center-head p.intro{max-width:62ch;margin:0 auto;color:#3b3724}
+  .center-head p.intro+.intro{margin-top:1em}
+  .kicker{font-size:22px;font-style:italic;color:var(--green-deep)}
+
+  .construint{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .deixa{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:36px}
+  .deixa>div{border-top:2px solid var(--gold);padding-top:15px}
+  .deixa .d-t{font-family:var(--display);font-size:20px;font-weight:600;line-height:1.25}
+  .construint .outro{max-width:62ch;margin:36px 0 0;color:#3b3724;font-size:19px}
+
+  .found{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:36px}
+  .found .cell{padding:24px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:15px}
+  .found .cell:nth-child(3n){border-right:none}
+  .found .cell:nth-child(n+7){border-bottom:none}
+  .found svg{width:27px;height:27px;color:var(--gold);flex:0 0 auto}
+  .found span{font-size:18.5px}
+
+  .proxima{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .prox-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:58px;align-items:center}
+  .poster{margin:0;border-radius:8px;overflow:hidden;box-shadow:0 24px 54px rgba(36,58,35,.30);max-width:430px}
+  .poster img{width:100%;height:auto;display:block}
+  .prox-date{font-size:23px;color:var(--green-deep);margin:0 0 16px}
+  .prox-date b{color:var(--gold);font-weight:600}
+  .prox-note{font-family:var(--sans);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--bark);font-weight:600;margin:0 0 22px}
+
   /* ── CTA band ── */
   .cta{background:
       radial-gradient(120% 120% at 0% 0%, rgba(191,149,64,.25), transparent 55%),
@@ -172,11 +219,20 @@
   .foot-note{color:#8d876f;font-size:12.5px}
 
   @media(max-width:860px){
-    .lead-grid,.split{grid-template-columns:1fr;gap:30px}
+    .lead-grid,.split,.two-col,.prox-grid{grid-template-columns:1fr;gap:30px}
     .emblem-frame{order:-1} .emblem-frame .emblem{width:170px;height:170px}
     .lead-photo{order:-1;max-height:380px}
-    .gallery{grid-template-columns:1fr 1fr}
+    .photo-tall{max-height:420px}
+    .gallery,.strip4{grid-template-columns:1fr 1fr}
+    .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
     .quotes{grid-template-columns:1fr}
+    .deixa{grid-template-columns:1fr 1fr;gap:22px}
+    .found{grid-template-columns:1fr 1fr}
+    .found .cell:nth-child(3n){border-right:1px solid var(--line)}
+    .found .cell:nth-child(2n){border-right:none}
+    .found .cell:nth-child(n+7){border-bottom:1px solid var(--line)}
+    .found .cell:nth-child(n+8){border-bottom:none}
+    .poster{max-width:360px;margin:0 auto}
     .wheel{grid-template-columns:1fr 1fr}
     .spoke:nth-child(2){border-right:none}
     .spoke{border-bottom:1px solid rgba(217,184,95,.22)}
@@ -219,11 +275,10 @@
       <b>24·25·26</b>
       <span class="ca">juliol 2026</span><span class="es">julio 2026</span>
       <span class="dot"></span>
-      <span class="ca">bosc prop de Banyoles</span><span class="es">bosque cerca de Banyoles</span>
+      <span class="ca">bosc de Castellar del Riu</span><span class="es">bosque de Castellar del Riu</span>
     </div>
     <div class="btn-row">
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeZ9oaAwf7qFiE3iU6C7se9xpNlTYEK94ZSFQa9YK8rmncEig/viewform" target="_blank" rel="noopener">
-        <span class="ca">Reservar la meva plaça</span><span class="es">Reservar mi plaza</span></a>
+      <a class="btn" href="lammas.html"><span class="ca">Pròxima edició</span><span class="es">Próxima edición</span></a>
       <a class="btn ghost" href="el-festival.html"><span class="ca">Coneix la tribu</span><span class="es">Conoce la tribu</span></a>
     </div>
   </div>
@@ -251,6 +306,70 @@
       <figure class="photo lead-photo">
         <img src="imagenes/comunitat.jpg" alt="Mans de la comunitat sostenint l'arbre de maig al bosc" loading="lazy">
       </figure>
+    </div>
+  </div>
+</section>
+
+<section id="possible" style="padding-bottom:60px">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <p class="eyebrow section-tag"><span class="ca">La crida</span><span class="es">La llamada</span></p>
+        <h2><span class="ca">I si encara fos <i>possible</i>?</span><span class="es">¿Y si todavía fuera <i>posible</i>?</span></h2>
+        <p style="margin:0;color:#3b3724;font-size:20px"><span class="ca">Recuperar espais on trobar-nos de veritat.</span><span class="es">Recuperar espacios donde encontrarnos de verdad.</span></p>
+        <ul class="verse">
+          <li><span class="ca">On els infants corren lliures.</span><span class="es">Donde los niños corren libres.</span></li>
+          <li><span class="ca">On la música neix al voltant del foc.</span><span class="es">Donde la música nace alrededor del fuego.</span></li>
+          <li><span class="ca">On compartim taula.</span><span class="es">Donde compartimos mesa.</span></li>
+          <li><span class="ca">On podem mostrar-nos tal com som.</span><span class="es">Donde podemos mostrarnos tal y como somos.</span></li>
+          <li><span class="ca">On la Terra torna a marcar el ritme.</span><span class="es">Donde la Tierra vuelve a marcar el ritmo.</span></li>
+        </ul>
+      </div>
+      <figure class="photo photo-tall">
+        <img src="imagenes/moment-abracada.jpg" alt="Una abraçada durant la trobada al bosc" loading="lazy">
+      </figure>
+    </div>
+    <div class="strip4">
+      <figure><img src="imagenes/moment-infancia.jpg" alt="Infants creant a la taula de l'espai familiar" loading="lazy"></figure>
+      <figure><img src="imagenes/moment-taula.jpg" alt="La cuina compartida servint el dinar de la tribu" loading="lazy"></figure>
+      <figure><img src="imagenes/moment-cercle.jpg" alt="La comunitat asseguda en cercle a l'herba" loading="lazy"></figure>
+      <figure><img src="imagenes/moment-dansa.jpg" alt="Dansa i riures en comunitat" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="statement" id="part">
+  <div class="wrap">
+    <img src="imagenes/logo-arbre.png" alt="Festivalet Druida — l'arbre de la vida" style="width:172px;margin:0 auto 20px" loading="lazy">
+    <p class="eyebrow section-tag"><span class="ca">La tribu</span><span class="es">La tribu</span></p>
+    <h2><span class="ca">No som espectadores. <i>Som part.</i></span><span class="es">No somos espectadoras. <i>Somos parte.</i></span></h2>
+    <p>
+      <span class="ca">El Festivalet Druida no es viu des de fora: es construeix entre totes. Cada persona que arriba porta amb ella un do, una mirada, una història i una espurna única per compartir. No hi ha personatges secundaris: totes som protagonistes d'aquesta aventura.</span>
+      <span class="es">Festivalet Druida no se vive desde fuera: se construye entre todas. Cada persona que llega trae consigo un don, una mirada, una historia y una chispa única para compartir. No hay personajes secundarios: todas somos protagonistas de esta aventura.</span>
+    </p>
+  </div>
+</section>
+
+<section id="conte">
+  <div class="wrap">
+    <div class="center-head">
+      <p class="eyebrow section-tag"><span class="ca">Una màgia senzilla</span><span class="es">Una magia sencilla</span></p>
+      <h2><span class="ca">El conte que estem <i>creant</i></span><span class="es">El cuento que estamos <i>creando</i></span></h2>
+      <p class="intro">
+        <span class="ca">Creiem en una màgia senzilla: la que neix quan les persones es reuneixen amb presència, joc i propòsit. Cada trobada és una pàgina més d'una història que escrivim juntes: una història on la natura torna a marcar el ritme, la comunitat troba el seu lloc i cada persona pot ser protagonista del seu propi camí.</span>
+        <span class="es">Creemos en una magia sencilla: la que nace cuando las personas se reúnen con presencia, juego y propósito. Cada encuentro es una página más de una historia que escribimos juntas: una historia donde la naturaleza vuelve a marcar el ritmo, la comunidad encuentra su lugar y cada persona puede ser protagonista de su propio camino.</span>
+      </p>
+      <p class="intro kicker">
+        <span class="ca">Perquè no venim a observar una història. Venim a crear-la.</span>
+        <span class="es">Porque no venimos a observar una historia. Venimos a crearla.</span>
+      </p>
+    </div>
+    <div class="mosaic">
+      <figure class="mbig"><img src="imagenes/conte-tribu.jpg" alt="La tribu celebrant amb els braços alçats sota el portal de fusta" loading="lazy"></figure>
+      <figure><img src="imagenes/conte-portal.jpg" alt="El portal de fusta construït per la comunitat" loading="lazy"></figure>
+      <figure><img src="imagenes/conte-cintes.jpg" alt="Cintes de colors entre els arbres del bosc" loading="lazy"></figure>
+      <figure><img src="imagenes/conte-musica.jpg" alt="Cercle de música viva amb tambors a l'herba" loading="lazy"></figure>
+      <figure><img src="imagenes/conte-vespre.jpg" alt="Sobretaula i caliu al capvespre" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -316,32 +435,38 @@
   </div>
 </section>
 
-<section id="familia">
+<section class="construint" id="construint">
   <div class="wrap">
-    <div class="split">
-      <div>
-        <p class="eyebrow section-tag"><span class="ca">Per tota la família</span><span class="es">Para toda la familia</span></p>
-        <h2><span class="ca">Un espai <i>familiar</i> i comunitari</span><span class="es">Un espacio <i>familiar</i> y comunitario</span></h2>
-        <p>
-          <span class="ca">Els infants també tenen el seu propi camí, acompanyats per un equip de druides del bosc. Un cap de setmana per descansar, reconnectar i jugar, amb els peus a la terra i en unió amb els altres.</span>
-          <span class="es">Los niños también tienen su propio camino, acompañados por un equipo de druidas del bosque. Un fin de semana para descansar, reconectar y jugar, con los pies en la tierra y en unión con los demás.</span>
-        </p>
-        <ul class="clean">
-          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><span class="ca">Equip infantil propi (druides del bosc).</span><span class="es">Equipo infantil propio (druidas del bosque).</span></span></li>
-          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><span class="ca">Música viva, dansa, cant i ritual al voltant del foc.</span><span class="es">Música viva, danza, canto y ritual alrededor del fuego.</span></span></li>
-          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><span class="ca">Mercat, teràpies i cuina cuidada.</span><span class="es">Mercado, terapias y cocina cuidada.</span></span></li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3><span class="ca">La tribu</span><span class="es">La tribu</span></h3>
-        <p>
-          <span class="ca">"Però com no vaig a creure en la màgia, si puc veure el foc cremar davant meu." Et reps amb el cor obert; la resta passa sol.</span>
-          <span class="es">"Pero cómo no voy a creer en la magia, si puedo ver el fuego arder frente a mí." Llegas con el corazón abierto; lo demás sucede solo.</span>
-        </p>
-      </div>
+    <p class="eyebrow section-tag"><span class="ca">Projecte viu</span><span class="es">Proyecto vivo</span></p>
+    <h2 style="max-width:22ch"><span class="ca">Estem construint una cosa <i>més gran</i> que un esdeveniment</span><span class="es">Estamos construyendo algo <i>más grande</i> que un evento</span></h2>
+    <p style="margin:0;color:#3b3724;font-size:20px"><span class="ca">A cada trobada deixem alguna cosa sembrada.</span><span class="es">Con cada encuentro dejamos algo sembrado.</span></p>
+    <div class="deixa">
+      <div><div class="d-t"><span class="ca">Un espai més cuidat</span><span class="es">Un espacio más cuidado</span></div></div>
+      <div><div class="d-t"><span class="ca">Una estructura nova</span><span class="es">Una estructura nueva</span></div></div>
+      <div><div class="d-t"><span class="ca">Un vincle més profund</span><span class="es">Un vínculo más profundo</span></div></div>
+      <div><div class="d-t"><span class="ca">Una comunitat més forta</span><span class="es">Una comunidad más fuerte</span></div></div>
+    </div>
+    <p class="outro">
+      <span class="ca">El Festivalet Druida no s'acaba quan s'acaba el cap de setmana: segueix viu en les relacions, els projectes i les amistats que neixen al voltant del foc.</span>
+      <span class="es">Festivalet Druida no termina cuando acaba el fin de semana: sigue vivo en las relaciones, los proyectos y las amistades que nacen alrededor del fuego.</span>
+    </p>
+  </div>
+</section>
+
+<section id="trobaras">
+  <div class="wrap">
+    <p class="eyebrow section-tag" style="text-align:center"><span class="ca">El que hi trobaràs</span><span class="es">Lo que encontrarás</span></p>
+    <h2 style="text-align:center"><span class="ca">Tot això t'espera <i>al bosc</i></span><span class="es">Todo esto te espera <i>en el bosque</i></span></h2>
+    <div class="found">
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20c-5-2-7.5-7-5.5-13 6-1 10.5 2 10.5 8 0 2.8-2 4.5-5 5z"/><path d="M12 20c0-6-1-9.5-4-13"/></svg><span><span class="ca">Natura</span><span class="es">Naturaleza</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17V5l9-2.2V15"/><circle cx="6.8" cy="17.2" r="2.3"/><circle cx="15.8" cy="15" r="2.3"/></svg><span><span class="ca">Música en viu</span><span class="es">Música en vivo</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1.2 3.2 4.5 5.2 4.5 9a4.5 4.5 0 0 1-9 0c0-2 .9-3.6 2-5.2.5 1 1.1 1.8 2.1 2.2-.1-2 .2-4 .4-6z"/></svg><span><span class="ca">Ritual</span><span class="es">Ritual</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5c3-3.2 5.5 2.8 8.5.2s5-3 8.5-1.2"/><path d="M3.5 15.5c3-3.2 5.5 2.8 8.5.2s5-3 8.5-1.2"/></svg><span><span class="ca">Dansa</span><span class="es">Danza</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8.5"/><path d="M12 12.5C12 8.8 9.2 6.5 5.5 6.5c0 3.7 2.8 6 6.5 6z"/><path d="M12 10.5c0-3 2.2-4.8 5.5-4.8 0 3.2-2.2 4.8-5.5 4.8z"/></svg><span><span class="ca">Infància</span><span class="es">Infancia</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V4.5"/><path d="M12 9.5C10 8.6 8.8 6.6 8.8 4.2c2.2 0 3.2 1.4 3.2 5.3z"/><path d="M12 9.5c2-.9 3.2-2.9 3.2-5.3-2.2 0-3.2 1.4-3.2 5.3z"/><path d="M12 14.5c-2-.9-3.2-2.9-3.2-5.3 2.2 0 3.2 1.4 3.2 5.3z"/><path d="M12 14.5c2-.9 3.2-2.9 3.2-5.3-2.2 0-3.2 1.4-3.2 5.3z"/></svg><span><span class="ca">Alimentació conscient</span><span class="es">Alimentación consciente</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 13.5c2.2 3 5.2 4.8 8.5 4.8s6.3-1.8 8.5-4.8"/><path d="M7.5 11.5c1.3 1.8 2.8 2.7 4.5 2.7s3.2-.9 4.5-2.7"/><circle cx="12" cy="7.5" r="2"/></svg><span><span class="ca">Tallers</span><span class="es">Talleres</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="4.5" r="1.4"/><circle cx="18.5" cy="8.2" r="1.4"/><circle cx="18.5" cy="15.8" r="1.4"/><circle cx="12" cy="19.5" r="1.4"/><circle cx="5.5" cy="15.8" r="1.4"/><circle cx="5.5" cy="8.2" r="1.4"/></svg><span><span class="ca">Comunitat</span><span class="es">Comunidad</span></span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c.7 4.4 3.6 7.3 8 8-4.4.7-7.3 3.6-8 8-.7-4.4-3.6-7.3-8-8 4.4-.7 7.3-3.6 8-8z"/></svg><span><span class="ca">Celebració</span><span class="es">Celebración</span></span></div>
     </div>
   </div>
 </section>
@@ -364,6 +489,30 @@
   </div>
 </section>
 
+<section class="proxima" id="proxima">
+  <div class="wrap">
+    <div class="prox-grid">
+      <figure class="poster">
+        <img src="imagenes/cartel-lammas.jpg" alt="Cartell de Lammas 2026, primer early bird" loading="lazy">
+      </figure>
+      <div>
+        <p class="eyebrow section-tag"><span class="ca">Pròxima edició</span><span class="es">Próxima edición</span></p>
+        <h2><span class="ca">Lammas · <i>la collita</i></span><span class="es">Lammas · <i>la cosecha</i></span></h2>
+        <p class="prox-date"><b>24 · 25 · 26</b> <span class="ca">de juliol de 2026 — Castellar del Riu (Berguedà)</span><span class="es">de julio de 2026 — Castellar del Riu (Berguedà)</span></p>
+        <p style="margin:0 0 14px;color:#3b3724">
+          <span class="ca">La collita i l'abundància compartida. Tres dies per celebrar el fruit de tot allò sembrat, amb música viva, ritual, tallers, espai familiar i vida en comunitat.</span>
+          <span class="es">La cosecha y la abundancia compartida. Tres días para celebrar el fruto de todo lo sembrado, con música viva, ritual, talleres, espacio familiar y vida en comunidad.</span>
+        </p>
+        <p class="prox-note"><span class="ca">Primer early bird obert · places limitades</span><span class="es">Primer early bird abierto · plazas limitadas</span></p>
+        <div class="btn-row">
+          <a class="btn" style="background:var(--green);border-color:var(--green);color:var(--paper)" href="https://docs.google.com/forms/d/e/1FAIpQLSeZ9oaAwf7qFiE3iU6C7se9xpNlTYEK94ZSFQa9YK8rmncEig/viewform" target="_blank" rel="noopener"><span class="ca">Vull participar-hi</span><span class="es">Quiero participar</span></a>
+          <a class="btn ghost" style="color:var(--green-deep);border-color:var(--green)" href="lammas.html"><span class="ca">Veure el programa</span><span class="es">Ver el programa</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="veus">
   <div class="wrap">
     <p class="eyebrow section-tag"><span class="ca">Veus de la tribu</span><span class="es">Voces de la tribu</span></p>
@@ -372,6 +521,9 @@
       <figure class="quote"><div class="mark">&ldquo;</div><p>És molt bonic veure com el festivalet creix i millora. Vam sostenir i ser sostinguts, mirant-nos als ulls per veure'ns profundament. Llarga vida al festivalet!</p><figcaption class="who">Gui · Vibronàutica</figcaption></figure>
       <figure class="quote"><div class="mark">&ldquo;</div><p>He podido volver a sentir energía y bienestar. Cuidados, cantos, bailes, energía bonita… Es una medicina para mí.</p><figcaption class="who">Silvia · Biocook</figcaption></figure>
       <figure class="quote"><div class="mark">&ldquo;</div><p>Tribu no es un colectivo de personas: es una manera de estar en el mundo. Y cuando coincides con otras que la comparten, algo maravilloso crece y se expande.</p><figcaption class="who">De la tribu</figcaption></figure>
+      <figure class="quote"><div class="mark">&ldquo;</div><p>Aunque en grupo me suelo sentir invisible, he conseguido verme abrazado por vosotros. Cuando abres las puertas, puedes conocer gente maravillosa que te cambie la vida.</p><figcaption class="who">Óscar</figcaption></figure>
+      <figure class="quote"><div class="mark">&ldquo;</div><p>Cuando comparto la alegría de mi ser y mi corazón, abro camino para que mi hijo escoja su propio camino.</p><figcaption class="who">Carlos</figcaption></figure>
+      <figure class="quote"><div class="mark">&ldquo;</div><p>Quiero que se quede en mi cuerpo el recuerdo de la suavidad. La lentitud me ayuda a estar presente. Todos somos humanitas con ganas de jugar.</p><figcaption class="who">Marta Kaoba</figcaption></figure>
     </div>
   </div>
 </section>
